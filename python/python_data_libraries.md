@@ -85,5 +85,8 @@ Try this workflow:
 This is the standard process in almost every AI and ML project.
 
 ---
+I recomed this video for you 
+will get more in depth
+https://www.youtube.com/watch?v=-65r_3r-nN4
 
 
