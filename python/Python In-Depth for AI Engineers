@@ -1,0 +1,128 @@
+# 🐍 Python In-Depth for AI Engineers
+
+Now that you know Python basics, let's go deeper. These are advanced Python concepts that you'll use often in AI, data science, and backend systems.
+
+We'll also include a runnable program at the end you can try in **VS Code**.
+
+---
+
+## 🔁 1. List Comprehensions
+
+A compact way to build lists:
+
+```python
+squares = [x**2 for x in range(5)]
+print(squares)  # Output: [0, 1, 4, 9, 16]
+```
+
+---
+
+## 🧵 2. Lambda Functions
+
+Anonymous functions, used with `map()`, `filter()`, etc.:
+
+```python
+add = lambda a, b: a + b
+print(add(3, 5))  # Output: 8
+```
+
+---
+
+## 🔁 3. Iterators & Generators
+
+Efficient way to loop over large data.
+
+```python
+def count_up_to(n):
+    count = 1
+    while count <= n:
+        yield count
+        count += 1
+
+for number in count_up_to(3):
+    print(number)
+```
+
+---
+
+## 🧰 4. Decorators
+
+Used to modify functions — great for logging, validation, caching:
+
+```python
+def debug(func):
+    def wrapper(*args, **kwargs):
+        print(f"Calling {func.__name__}")
+        return func(*args, **kwargs)
+    return wrapper
+
+@debug
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("AI")
+```
+
+---
+
+## 📦 5. Working with Files
+
+Read and write files:
+
+```python
+with open("data.txt", "w") as f:
+    f.write("AI is amazing!")
+
+with open("data.txt", "r") as f:
+    print(f.read())
+```
+
+---
+
+## 🧪 6. Exception Handling
+
+```python
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Can't divide by zero!")
+finally:
+    print("Done")
+```
+
+---
+
+## 💻 Full Program to Run in VS Code
+
+Paste this in a `.py` file and run:
+
+```python
+from datetime import datetime
+
+def log_time(func):
+    def wrapper(*args, **kwargs):
+        print(f"[LOG] {datetime.now()} — Running {func.__name__}")
+        return func(*args, **kwargs)
+    return wrapper
+
+@log_time
+def summarize(numbers):
+    total = sum(numbers)
+    print(f"Sum: {total}")
+    print(f"Average: {total / len(numbers)}")
+
+# Example usage:
+summarize([10, 20, 30, 40])
+```
+
+Expected Output:
+
+```
+[LOG] 2025-06-11 19:30:00 — Running summarize
+Sum: 100
+Average: 25.0
+```
+
+---
+
+Next: We move into **data handling with NumPy and Pandas**.
