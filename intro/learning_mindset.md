@@ -35,6 +35,44 @@ Audio GenAI: ElevenLabs, MusicGen
 
 Video GenAI: RunwayML, Pika
 
+ Transformer = Encoder + Decoder
+🔹 Encoder
+Reads and understands the input (like a sentence, paragraph, or code)
+
+Breaks it down into key patterns using self-attention
+
+Produces a series of embeddings (numerical representations of meaning)
+
+🔹 Decoder
+Takes the encoded information and generates the output
+(like translating to another language, answering a question, or writing text)
+
+Uses self-attention and cross-attention (to attend to encoder output)
+
+
+Hallucination (in AI/LLMs)
+Hallucination is when an AI (like ChatGPT or any LLM) generates confident-sounding but incorrect or made-up information.
+
+❗Example:
+You ask: “Who founded Cognexa?”
+The AI replies: “It was founded by Elon Musk in 2016.”
+→ That’s a hallucination if it’s not true.
+
+🧠 Why It Happens:
+The model predicts likely words, not facts
+
+It doesn’t “know” — it generates based on patterns in its training data
+
+If training data is missing, inconsistent, or biased → hallucinations occur
+
+🛡️ How to Reduce Hallucinations:
+Use RAG (Retrieval-Augmented Generation) to pull real data from a database or documents
+
+Fine-tune on verified internal content
+
+Add human-in-the-loop review for high-stakes outputs
+
+
 💡 Relationship Summary:
 
 Deep Learning is the technique
