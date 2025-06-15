@@ -98,3 +98,7 @@ Why It's Used	GPT reads and thinks in tokens, not whole words
 Cost	You’re charged per token
 Limit	Each model has a max number of tokens it can handle
 
+
+🔗 Try It Yourself:
+You can test it online here: OpenAI Tokenizer Tool
+https://platform.openai.com/tokenizer
