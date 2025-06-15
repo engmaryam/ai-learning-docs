@@ -1,0 +1,100 @@
+🧠 What Is a Tokenizer?
+A tokenizer is a tool used by language models like GPT to break down text into smaller units (tokens) that the model can understand and process.
+
+These tokens are not always whole words — they can be:
+
+Words
+
+Parts of words (prefixes, suffixes)
+
+Punctuation
+
+Spaces
+
+Even special characters
+
+🧩 What Is a Token?
+A token is a piece of text the model reads at one time.
+
+📌 Examples:
+Text	Tokens
+ChatGPT	1 token
+OpenAI is awesome!	4 tokens → ["Open", "AI", " is", " awesome", "!"]
+unbelievable	3 tokens → ["un", "believ", "able"]
+The quick brown fox	5 tokens → ["The", " quick", " brown", " fox"]
+
+Even spaces are part of tokens, so "Hello" and " Hello" are different.
+
+⚖️ Why Tokens Matter
+Token Limit
+
+GPT-4-turbo has a 128,000 token limit per request (combined input + output).
+
+GPT-3.5-turbo supports up to 16,385 tokens.
+
+Pricing
+
+You are billed per token, both for the input you send and the output you receive.
+
+Example: If you send 500 tokens and get 1,000 back, you're billed for 1,500 tokens.
+
+Model Memory
+
+The token limit also controls how much the model can "remember" or keep track of in a conversation.
+
+Exceeding the limit will cause older parts of the conversation or text to be dropped.
+
+🛠 Tools to Use
+✅ OpenAI Tokenizer Playground
+Try it here: https://platform.openai.com/tokenizer
+
+Paste text and see how it's split into tokens.
+
+✅ Python Package (tiktoken)
+If you're coding, OpenAI provides a tokenizer library called tiktoken.
+
+python
+Copy
+Edit
+import tiktoken
+
+enc = tiktoken.encoding_for_model("gpt-4")
+tokens = enc.encode("Hello, world!")
+print(tokens)          # → [9906, 11, 995]
+print(len(tokens))     # → 3 tokens
+🧮 Real-world Example
+Input:
+"Hi! My name is Maryam. I run Cognexa LLC."
+
+Token Breakdown:
+"Hi" → 1 token
+
+"!" → 1 token
+
+" My" → 1 token
+
+" name" → 1 token
+
+" is" → 1 token
+
+" Maryam" → 1 token
+
+"." → 1 token
+
+" I run" → 2 tokens
+
+" Cognexa" → 1 token
+
+" LLC" → 1 token
+
+"." → 1 token
+
+✅ Total tokens = ~11–12 tokens (approx.)
+
+✅ Summary
+Feature	Description
+Token	A small chunk of text (can be part of a word)
+Why It's Used	GPT reads and thinks in tokens, not whole words
+Cost	You’re charged per token
+Limit	Each model has a max number of tokens it can handle
+
